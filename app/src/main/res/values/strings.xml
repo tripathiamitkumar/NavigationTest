@@ -1,0 +1,168 @@
+<resources>
+    <string name="app_name">Proof Data</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <array name="store">
+        <item>Select</item>
+        <item>Igniting Primer NO:.1 MG 8</item>
+        <item>Cap 78mg QFGG</item>
+        <item>Cap Complete for Primary Cartg.for Mortar Bomb 51mm(3G CAP)</item>
+        <item>Cap Conducting Composition</item>
+        <item>Primer Detonator A-30-T</item>
+        <item>Charged Electric Fuze</item>
+        <item>Igniting Primer KB-3B</item>
+        <item>Igniting Primer No:.1 Sleeve</item>
+        <item>Detonator 135mg LZY</item>
+        <item>Detonator 356mg LZ</item>
+        <item>Primer Electric 1A/L (Filled)</item>
+        <item>Primer Electric 1A/L (Filled)(HEAVY PROOF)</item>
+        <item>Primer Electric 1A/L (Empty)</item>
+        <item>Primer Electric 1A/L (Empty)(HEAVY PROOF)</item>
+        <item>Combination Case Ignition Primer GUV-7 (filled)</item>
+        <item>Combination Case Ignition Primer GUV-7 (filled)Pilot Lot</item>
+        <item>Combination Case Ignition Primer GUV-7 (Empty)</item>
+        <item>Combination Case Ignition Primer GUV-7 (Empty)Pilot Lot</item>
+        <item>Primer Percussion Q.F.Cartridge 18A (FILLED)</item>
+        <item>Primer Sleeve KB-30 (Filled)</item>
+        <item>Fuze Mine Anti-Tank 2B ND (Filled)</item>
+        <item>Fuze Mine Anti-Tank 2B ND (Filled)(FIRST LOT)</item>
+        <item>Fuze Mine Anti-Tank 2B ND (Empty)</item>
+        <item>Fuze Mine Anti-Tank 2B ND (Empty) (FIRST LOT)</item>
+        <item>Fuze Mine Anti-Tank 4A ND (Filled)</item>
+        <item>Fuze Mine Anti-Tank 4A ND (Filled)(FIRST LOT)</item>
+        <item>Fuze Mine Anti-Tank 4A ND (Empty)</item>
+        <item>Fuze Mine Anti-Tank 4A ND (Empty)(FIRST LOT)</item>
+        <item>Fuze Percussion DA No .117 MK-20(Filled)</item>
+        <item>Fuze Percussion DA No 117 MK-20(Filled)First Lot/Pilot Lot</item>
+        <item>Fuze Percussion DA No 117 MK-20(Empty)</item>
+        <item>Fuze Percussion DA No.117 MK-20(Empty)(Advance samples)</item>
+        <item>Fuze Percussion DA No.117 MK-20(Empty)(First Lot)</item>
+        <item>Fuze Percussion DA5A (Filled)</item>
+        <item>Fuze Percussion DA5A (Filled)(First Lot)</item>
+        <item>Fuze Percussion DA5A (Filled)</item>
+        <item>Fuze Percussion DA5A (Filled)(First Lot)</item>
+        <item>Fuze Percussion DA5A(Empty Filled)</item>
+        <item>Fuze Percussion DA5A(Empty filled)</item>
+        <item>Fuze Percussion DA5A(Empty Filled)(First Lot)</item>
+        <item>Fuze Percussion DA5A(Empty Filled)(First Lot)</item>
+        <item>Fuze Percussion DA5A(Empty Filled)(Advance samples)</item>
+        <item>Fuze Percussion DA5A(Empty Filled)(Advance samples)</item>
+    </array>
+    <array name="typeofstore">
+        <item>Select</item>
+        <item>FILLED</item>
+        <item>EMPTY</item>
+    </array>
+    <array name="location">
+        <item>Select</item>
+        <item>UNIT-03</item>
+        <item>UNIT-04</item>
+        <item>UNIT-15</item>
+        <item>DONGABAHAL</item>
+        <item>From GPS</item>
+    </array>
+    <array name="section">
+        <item>Select</item>
+        <item>UNIT-01</item>
+        <item>UNIT-03</item>
+        <item>UNIT-04</item>
+        <item>UNIT-06</item>
+        <item>UNIT-10</item>
+    </array>
+    <array name="typeofproof">
+        <item>Select</item>
+        <item>STATIC</item>
+        <item>STATIC/P</item>
+        <item>STATIC/RP</item>
+        <item>DYNAMIC</item>
+    </array>
+    <array name="proofnumber">
+        <item>Select</item>
+        <item>First Proof</item>
+        <item>Reproof</item>
+        <item>Double Reproof</item>
+    </array>
+    <array name="typeoftest">
+        <item>Select</item>
+        <item>Checking of resistance against jolting</item>
+        <item>Sensitivity to piercing at upper limit (5cm) after jolting test</item>
+        <item>Sensitivity to piercing at lower limit(0.5cm)</item>
+        <item>Sensitivity to piercing at upper limit(5cm) after holding in the desiccators</item>
+        <item>Functioning Proof Test</item>
+        <item>Drop test(from every 10th lot)</item>
+        <item>Drop Test</item>
+        <item>Sensitivity test</item>
+        <item>Firing test</item>
+        <item>Delay Proof </item>
+        <item>Rough Usage (Drop test)</item>
+        <item>Impact test</item>
+        <item>Jolt test</item>
+        <item>Initiation test (after impact test)</item>
+        <item>Initiation test (after jolt test)</item>
+        <item>Initiation test (after impact/Jolt test where ever single defect observed)</item>
+        <item>Initiation test (after impact/Jolt test whereever double defect observed)</item>
+        <item>Resistance Test </item>
+        <item>Functioning delay test </item>
+        <item>Sensitivity to piercing from upper limit (after jolt test)</item>
+        <item>Sensitivity to piercing from lower limit</item>
+        <item>Sensitivity to piercing from upper limit (after impact test)</item>
+        <item>Sensitivity to piercing with Duralumin pin</item>
+        <item>Sensitivity to impact at upper limit</item>
+        <item>Sensitivity to impact at lower limit</item>
+        <item>Sensitivity to impact at upper limit in 100% humid condition</item>
+        <item>Pressure bar test</item>
+        <item>Flash Delivery test</item>
+        <item>Resistance test (Electrical test)</item>
+        <item>Flash test </item>
+        <item>Time to function </item>
+        <item>Rough Usage test (Jolt test and Drop Test followed by Resistance test)</item>
+        <item>Rough Usage test (Vibration test followed by Resistance test)</item>
+        <item>Functioning Delay test after Jolt Test</item>
+        <item>Environmental Conditioning test (5 Samples after jolt test)</item>
+        <item>Water immersion test followed by Flash Test (5 samples after Environment conditioning test and 3 samples after jolt test)</item>
+        <item>Environmental Conditioning test (13 Samples after jolt test)</item>
+        <item>Water immersion test followed by Flash Test (13 samples after Environment conditioning test and 13 samples after jolt test)</item>
+        <item>Functioning Proof by Percussion Method</item>
+        <item>Delay test (by elecrical method)</item>
+        <item>Functioning Test</item>
+        <item>Checking  of maximum Pressure at normal temperature (25±10)°C</item>
+        <item>Checking of time interval from the moment of impact on striker to the start of rising of Pressure curve:T1 (at  normal temperature (25±10)°C)</item>
+        <item>Checking of Time interval from start of rising of the Pressure curve to the moment of attending the maximum:T2 (at normal temperature (25±10)°C)</item>
+        <item>Checking  of maximum Pressure at temperature +60°C</item>
+        <item>Checking of time interval from the moment of impact on striker to the start of rising of Pressure curve:T1 (at temperature (+60±3)°C)</item>
+        <item>Checking of Time interval from start of rising  of the Pressure curve to the moment of attending the maximum:T2 (at temperature (+60±3)°C)</item>
+        <item>Checking  of maximum Pressure at temperature (-60±3)°C</item>
+        <item>Checking of time interval from the moment of impact on striker to the start of rising of Pressure curve:T1 (at temperature (-60±3)°C)</item>
+        <item>Checking of Time interval from start of rising  of the Pressure curve to the moment of attending the maximum:T2 (at temperature (-60±3)°C)</item>
+        <item>Complete detonation of the Fuze Anti removal</item>
+        <item>Non functioning test</item>
+        <item>Functioning  of Fuze</item>
+        <item>Static Detonation Proof</item>
+        <item>Sealing Proof</item>
+        <item>Dynamic Proof</item>
+        <item>Functioning and Velocity proof test</item>
+        <item>Functioning proof with Ch-I and Ch-II Sample Size 60</item>
+        <item>Velocity  Proof with Ch-I Sample Size 30</item>
+        <item>Velocity  Proof with Ch-II Sample Size 30</item>
+        <item>Wild Round while firing with Ch-I Sample Size 30</item>
+        <item>Wild Round while firing with Ch-II Sample Size 30</item>
+        <item>After wild round elimination (with Ch-I)</item>
+        <item>After wild round elimination (with Ch-II)</item>
+        <item>Self Destruction test at Ambient Temp</item>
+        <item>Self Destruction test at +50°C±3°C</item>
+        <item>Self Destruction test at -50°C±3°C</item>
+        <item>Hammer Masset Test at 10th tooth</item>
+        <item>Hammer Masset Test at 15th tooth</item>
+        <item>Hammer Masset Test at 23rd tooth</item>
+        <item>Water immersion test</item>
+        <item>Complete detonation of Filled Mine AT 4D ND</item>
+        <item>Complete Detonation and Range Proof</item>
+        <item>Complete Detonation Proof</item>
+        <item>Complete Detonation and Range Proof Conditioned at-30°C for 8 Hours</item>
+        <item>Complete Detonation and Range Proof Conditioned at +50 °C for 8 Hours</item>
+
+    </array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

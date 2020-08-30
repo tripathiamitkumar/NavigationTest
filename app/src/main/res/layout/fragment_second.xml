@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/linear33"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:orientation="vertical"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView45"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="40dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Ordnance Factory Badmal QC(PR)"
+            android:textColor="#000000"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView46"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="165dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="165dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Proof Result"
+            android:textColor="#000000"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear34"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear33"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="5dp"
+        android:background="#E6FD95"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/linear33"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear33">
+        <TextView
+            android:id="@+id/textView47"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+
+            android:text="Proof Slip Number :"
+            android:textColor="#000000"
+            android:textSize="28sp" />
+        <TextView
+            android:id="@+id/textView48"
+            android:layout_width="180dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+
+            android:background="@drawable/round_shape_button"
+            android:textColor="#000000"
+            android:textSize="28sp" />
+        <Button
+            android:id="@+id/btn_f2_search1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="1dp"
+            android:background="@drawable/round_shape_search_button"
+            android:gravity="center"
+            android:text="Search"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear35"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear34"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="5dp"
+        android:background="#E6FD95"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/linear34"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear34">
+        <TextView
+            android:id="@+id/textView49"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+
+            android:text="Lot Number             :"
+            android:textColor="#000000"
+            android:textSize="28sp" />
+        <TextView
+            android:id="@+id/textView50"
+            android:layout_width="180dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+
+            android:background="@drawable/round_shape_button"
+            android:textColor="#000000"
+            android:textSize="28sp" />
+        <Button
+            android:id="@+id/btn_f2_search2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="1dp"
+            android:background="@drawable/round_shape_search_button"
+            android:gravity="center"
+            android:text="Search"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/loadThird"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="424dp"
+        android:background="@drawable/round_shape_black_button"
+        android:gravity="center"
+
+        android:text="Report"
+        android:textColor="@color/colorPrimaryDark"
+
+        android:textSize="24sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.568"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
