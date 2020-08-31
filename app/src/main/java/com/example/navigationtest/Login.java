@@ -18,6 +18,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.navigationtest.util.LoginPreference;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -28,14 +29,12 @@ public class Login extends AppCompatActivity {
     public static final String KEY_USERNAME="username";
     public static final String KEY_PASSWORD="password";
     public static final String LOGIN_SUCCESS="success";
-    public static final String SHARED_PREF_NAME="tech";
-    //public static final String EMAIL_SHARED_PREF="email";
-    public static final String USERNAME_SHARED_PREF="username";
-    public static final String LOGGEDIN_SHARED_PREF="loggedin";
+
     private EditText editTextUsername;
     private EditText editTextPassword;
     private Button BtnLogin;
     private boolean loggedIn=false;
+    LoginPreference loginPreference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +42,7 @@ public class Login extends AppCompatActivity {
         editTextUsername=(EditText)findViewById(R.id.editText_username);
         editTextPassword=(EditText)findViewById(R.id.editText_password);
         BtnLogin=(Button)findViewById(R.id.btn_login);
+        loginPreference = new LoginPreference(this);
         BtnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,15 +59,7 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         if(response.trim().equalsIgnoreCase(LOGIN_SUCCESS)){
-
-                            SharedPreferences sharedPreferences = Login.this.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
-
-                            SharedPreferences.Editor editor = sharedPreferences.edit();
-
-                            editor.putBoolean(LOGGEDIN_SHARED_PREF, true);
-                            editor.putString(USERNAME_SHARED_PREF, username);
-
-                            editor.commit();
+                            loginPreference.putLoginPref(username);
                             Intent intent = new Intent(Login.this, MainActivity.class);
                            // Intent intent = new Intent(Login.this, MainActivity.class);
                             startActivity(intent);
@@ -96,8 +88,10 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
-        loggedIn = sharedPreferences.getBoolean(LOGGEDIN_SHARED_PREF, false);
+        if(loginPreference==null){
+            loginPreference =new LoginPreference(this);
+        }
+        loggedIn= loginPreference.isLogin();
         if(loggedIn){
             Intent intent = new Intent(Login.this, MainActivity.class);
             //Intent intent = new Intent(Login.this, MainActivity.class);
