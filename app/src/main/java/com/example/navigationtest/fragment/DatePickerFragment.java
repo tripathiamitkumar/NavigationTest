@@ -1,4 +1,4 @@
-package com.example.navigationtest;
+package com.example.navigationtest.fragment;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;

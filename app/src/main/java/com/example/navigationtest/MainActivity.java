@@ -20,12 +20,14 @@ import android.view.MenuItem;
 import android.view.WindowManager;
 
 
-
-
+import com.example.navigationtest.fragment.ResultFragment;
+import com.example.navigationtest.fragment.ReportFragment;
+import com.example.navigationtest.fragment.ProofFragment;
+import com.example.navigationtest.fragment.MainFragment2;
 import com.google.android.material.navigation.NavigationView;
 
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, MainFragment.onFragmentBtnSelected, MainFragment.onMainFragment2BtnSelected, MainFragment2.onMainFragment2BackBtnSelected, FragmentSecond.onThirdFragmentBtnSelected {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, ProofFragment.onFragmentBtnSelected, ProofFragment.onMainFragment2BtnSelected, MainFragment2.onMainFragment2BackBtnSelected, ResultFragment.onThirdFragmentBtnSelected {
 
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle actionBarDrawerToggle;
@@ -63,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         fragmentManager = getSupportFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.container_fragment, new MainFragment());
+        fragmentTransaction.add(R.id.container_fragment, new ProofFragment());
         fragmentTransaction.commit();
 
 
@@ -85,20 +87,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (menuItem.getItemId() == R.id.nav_proof) {
             fragmentManager = getSupportFragmentManager();
             fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.container_fragment, new MainFragment());
+            fragmentTransaction.replace(R.id.container_fragment, new ProofFragment());
             fragmentTransaction.commit();
 
         }
         if (menuItem.getItemId() == R.id.nav_result) {
             fragmentManager = getSupportFragmentManager();
             fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.container_fragment, new FragmentSecond());
+            fragmentTransaction.replace(R.id.container_fragment, new ResultFragment());
             fragmentTransaction.commit();
         }
         if (menuItem.getItemId() == R.id.nav_report) {
             fragmentManager = getSupportFragmentManager();
             fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.container_fragment, new FragmentThird());
+            fragmentTransaction.replace(R.id.container_fragment, new ReportFragment());
             fragmentTransaction.commit();
         }
 
@@ -123,7 +125,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void onButtonSeleted() {
         fragmentManager = getSupportFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.container_fragment, new FragmentSecond());
+        fragmentTransaction.replace(R.id.container_fragment, new ResultFragment());
         fragmentTransaction.commit();
     }
 
@@ -139,7 +141,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void onButtonSeleted2() {
         fragmentManager = getSupportFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.container_fragment, new FragmentThird());
+        fragmentTransaction.replace(R.id.container_fragment, new ReportFragment());
         fragmentTransaction.commit();
     }
 
@@ -148,7 +150,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void onButtonSeleted3() {
         fragmentManager = getSupportFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.container_fragment, new MainFragment());
+        fragmentTransaction.replace(R.id.container_fragment, new ProofFragment());
         fragmentTransaction.commit();
     }
 }

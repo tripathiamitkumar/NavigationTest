@@ -1,11 +1,7 @@
-package com.example.navigationtest;
+package com.example.navigationtest.fragment;
 
-import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,27 +12,22 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDialogFragment;
-import androidx.appcompat.widget.AppCompatSpinner;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
+import com.example.navigationtest.R;
 
-public class MainFragment extends Fragment implements DatePickerDialog.OnDateSetListener {
+import java.util.ArrayList;
+
+public class ProofFragment extends Fragment implements DatePickerDialog.OnDateSetListener {
     ImageButton selectDate;
     TextView dateToActivate;
     TextView selectedDate;
@@ -252,7 +243,7 @@ public class MainFragment extends Fragment implements DatePickerDialog.OnDateSet
             public void onClick(View view) {
 
                 DialogFragment newFragment = new DatePickerFragment();
-                newFragment.setTargetFragment(MainFragment.this, 0);
+                newFragment.setTargetFragment(ProofFragment.this, 0);
                 newFragment.show(getFragmentManager(), "datePicker");
             }
         });
