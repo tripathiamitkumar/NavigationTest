@@ -1,39 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:layout_below="@+id/top"
     android:fillViewport="true">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_marginTop="80dp"
+        android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:id="@+id/linear1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:orientation="vertical"
-            android:padding="5dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+
 
             <TextView
                 android:id="@+id/textView16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginRight="40dp"
-                android:layout_weight="1"
-                android:gravity="center"
                 android:text="Ordnance Factory Badmal QC(PR)"
                 android:textColor="#000000"
+                android:textAlignment="center"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/textView8"
                 android:textSize="28sp"
                 android:textStyle="bold" />
 
@@ -41,55 +31,41 @@
                 android:id="@+id/textView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginLeft="165dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="165dp"
-                android:layout_weight="1"
-                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="@+id/textView16"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView16"
                 android:text="Proof"
                 android:textColor="#000000"
+                android:textAlignment="center"
                 android:textSize="26sp"
                 android:textStyle="bold" />
-        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/linear2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/linear1"
-            android:layout_marginHorizontal="5dp"
-            android:layout_marginStart="5dp"
-
-            android:layout_marginEnd="5dp"
+            android:layout_marginTop="20dp"
             android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/linear1"
-            app:layout_constraintTop_toBottomOf="@+id/linear1">
-
-
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView8"
+            >
             <TextView
                 android:id="@+id/textView7"
-                android:layout_width="145dp"
-
-                android:layout_height="40dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="0dp"
-                android:layout_marginBottom="5dp"
-
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="Select Date"
                 android:textColor="#000000"
-                android:textSize="28sp" />
+                android:textSize="28sp"
+                />
 
             <ImageButton
 
                 android:id="@+id/SelectDate"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="15dp"
                 android:background="@drawable/round_shape_button"
                 android:scaleType="fitCenter"
                 android:src="@drawable/calendar" />
@@ -98,8 +74,6 @@
                 android:id="@+id/selectedDate"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
                 android:layout_marginBottom="5dp"
                 android:layout_toRightOf="@id/SelectDate"
                 android:layout_weight="1"
@@ -112,11 +86,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/linear2"
-            android:layout_marginHorizontal="5dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="5dp"
-            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/linear2"
             app:layout_constraintStart_toStartOf="parent"
