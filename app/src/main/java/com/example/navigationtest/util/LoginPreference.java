@@ -21,7 +21,6 @@ public class LoginPreference {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putBoolean(LOGGEDIN_SHARED_PREF, true);
         editor.putString(USERNAME_SHARED_PREF, username);
-
         editor.commit();
     }
 
