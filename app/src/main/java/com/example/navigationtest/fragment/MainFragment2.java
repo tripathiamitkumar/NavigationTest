@@ -5,8 +5,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -15,101 +18,67 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.navigationtest.R;
+import com.example.navigationtest.model.Test_Param;
+import com.example.navigationtest.model.Test_Type;
+import com.example.navigationtest.util.DataMapping;
+import com.example.navigationtest.util.DataSetup;
+import com.example.navigationtest.util.MasterDataUtil;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainFragment2 extends Fragment {
-    ArrayList<String> typeoftest;
+    List<Test_Type> typeoftest;
     Spinner spinnerTypeOfTest,spinnerTestParameter;
-    ArrayAdapter<String> arrayAdapter_typeoftest, arrayAdapter_testparameter;
+    ArrayAdapter<Test_Type> arrayAdapter_typeoftest;
+    ArrayAdapter<Test_Param> testParamArrayAdapter;
     private onMainFragment2BackBtnSelected listener3;
 
+    private DataSetup dataSetup;
+    private MasterDataUtil masterDataUtil = null;
+    private View view;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment2_main, container, false);
-      spinnerTypeOfTest = (Spinner)view.findViewById(R.id.spinnerTypeOfTest);
-        typeoftest = new ArrayList<>();
-        typeoftest.add("Select");
-        typeoftest.add("Checking of resistance against jolting");
-        typeoftest.add("Sensitivity to piercing at upper limit (5cm) after jolting test");
-        typeoftest.add("Sensitivity to piercing at lower limit(0.5cm)");
-        typeoftest.add("Sensitivity to piercing at upper limit(5cm) after holding in the desiccators");
-        typeoftest.add("Functioning Proof Test");
-        typeoftest.add("Drop test(from every 10th lot)");
-        typeoftest.add("Drop Test");
-        typeoftest.add("Sensitivity test");
-        typeoftest.add("Firing test");
-        typeoftest.add("Delay Proof");
-        typeoftest.add("Rough Usage (Drop test)");
-        typeoftest.add("Impact test");
-        typeoftest.add("Jolt test");
-        typeoftest.add("Initiation test (after impact test)");
-        typeoftest.add("Initiation test (after jolt test)");
-        typeoftest.add("Initiation test (after impact/Jolt test where ever single defect observed)");
-        typeoftest.add("Initiation test (after impact/Jolt test whereever double defect observed)");
-        typeoftest.add("Resistance Test");
-        typeoftest.add("Functioning delay test");
-        typeoftest.add("Sensitivity to piercing from upper limit (after jolt test)");
-        typeoftest.add("Sensitivity to piercing from lower limit");
-        typeoftest.add("Sensitivity to piercing from upper limit (after impact test)");
-        typeoftest.add("Sensitivity to piercing with Duralumin pin");
-        typeoftest.add("Sensitivity to impact at upper limit");
-        typeoftest.add("Sensitivity to impact at lower limit");
-        typeoftest.add("Sensitivity to impact at upper limit in 100% humid condition");
-        typeoftest.add("Pressure bar test");
-        typeoftest.add("Flash Delivery test");
-        typeoftest.add("Resistance test (Electrical test)");
-        typeoftest.add("Flash test");
-        typeoftest.add("Time to function");
-        typeoftest.add("Rough Usage test (Jolt test and Drop Test followed by Resistance test)");
-        typeoftest.add("Rough Usage test (Vibration test followed by Resistance test)");
-        typeoftest.add("Functioning Delay test after Jolt Test");
-        typeoftest.add("Environmental Conditioning test (5 Samples after jolt test)");
-        typeoftest.add("Water immersion test followed by Flash Test (5 samples after Environment conditioning test and 3 samples after jolt test)");
-        typeoftest.add("Environmental Conditioning test (13 Samples after jolt test)");
-        typeoftest.add("Water immersion test followed by Flash Test (13 samples after Environment conditioning test and 13 samples after jolt test)");
-        typeoftest.add("Functioning Proof by Percussion Method");
-        typeoftest.add("Delay test (by elecrical method)");
-        typeoftest.add("Functioning Test");
-        typeoftest.add("Checking  of maximum Pressure at normal temperature (25±10)°C");
-        typeoftest.add("Checking of time interval from the moment of impact on striker to the start of rising of Pressure curve:T1 (at  normal temperature (25±10)°C)");
-        typeoftest.add("Checking of Time interval from start of rising of the Pressure curve to the moment of attending the maximum:T2 (at normal temperature (25±10)°C)");
-        typeoftest.add("Checking  of maximum Pressure at temperature +60°C");
-        typeoftest.add("Checking of time interval from the moment of impact on striker to the start of rising of Pressure curve:T1 (at temperature (+60±3)°C)");
-        typeoftest.add("Checking of Time interval from start of rising  of the Pressure curve to the moment of attending the maximum:T2 (at temperature (+60±3)°C)");
-        typeoftest.add("Checking  of maximum Pressure at temperature (-60±3)°C");
-        typeoftest.add("Checking of time interval from the moment of impact on striker to the start of rising of Pressure curve:T1 (at temperature (-60±3)°C)");
-        typeoftest.add("Checking of Time interval from start of rising  of the Pressure curve to the moment of attending the maximum:T2 (at temperature (-60±3)°C)");
-        typeoftest.add("Complete detonation of the Fuze Anti removal");
-        typeoftest.add("Non functioning test");
-        typeoftest.add("Functioning  of Fuze");
-        typeoftest.add("Static Detonation Proof");
-        typeoftest.add("Sealing Proof");
-        typeoftest.add("Dynamic Proof");
-        typeoftest.add("Functioning and Velocity proof test");
-        typeoftest.add("Functioning proof with Ch-I and Ch-II Sample Size 60");
-        typeoftest.add("Velocity  Proof with Ch-I Sample Size 30");
-        typeoftest.add("Velocity  Proof with Ch-II Sample Size 30");
-        typeoftest.add("Wild Round while firing with Ch-I Sample Size 30");
-        typeoftest.add("Wild Round while firing with Ch-II Sample Size 30");
-        typeoftest.add("After wild round elimination (with Ch-I)");
-        typeoftest.add("After wild round elimination (with Ch-II)");
-        typeoftest.add("Self Destruction test at Ambient Temp");
-        typeoftest.add("Self Destruction test at +50°C±3°C");
-        typeoftest.add("Self Destruction test at -50°C±3°C");
-        typeoftest.add("Hammer Masset Test at 10th tooth");
-        typeoftest.add("Hammer Masset Test at 15th tooth");
-        typeoftest.add("Hammer Masset Test at 23rd tooth");
-        typeoftest.add("Water immersion test");
-        typeoftest.add("Complete detonation of Filled Mine AT 4D ND");
-        typeoftest.add("Complete Detonation and Range Proof");
-        typeoftest.add("Complete Detonation Proof");
-        typeoftest.add("Complete Detonation and Range Proof Conditioned at-30°C for 8 Hours");
-        typeoftest.add("Complete Detonation and Range Proof Conditioned at +50 °C for 8 Hours");
-
-        arrayAdapter_typeoftest = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item, typeoftest);
+        view = inflater.inflate(R.layout.fragment2_main, container, false);
+        masterDataUtil= MasterDataUtil.getInstance();
+        dataSetup = new DataMapping(masterDataUtil);
+        spinnerTypeOfTest = (Spinner)view.findViewById(R.id.spinnerTypeOfTest);
+        typeoftest = dataSetup.getTestTypeList();
+        arrayAdapter_typeoftest = new ArrayAdapter<Test_Type>(getContext(), android.R.layout.simple_spinner_dropdown_item, typeoftest);
         spinnerTypeOfTest.setAdapter(arrayAdapter_typeoftest);
+        spinnerTestParameter = (Spinner) view.findViewById(R.id.spinnerTestParameter);
+
+        spinnerTypeOfTest.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int pos, long l) {
+                  Test_Type test_type =(Test_Type)  adapterView.getItemAtPosition(pos);
+                  List<Test_Param> test_paramList= masterDataUtil.getTestParamFromTestType(test_type.getName());
+                  testParamArrayAdapter = new ArrayAdapter<Test_Param>(getContext(), android.R.layout.simple_spinner_dropdown_item, test_paramList);
+                  spinnerTestParameter.setAdapter(testParamArrayAdapter);
+                  if(test_paramList.size()==1){
+                      setupDataInput(test_paramList.get(0).getName());
+                  }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
+
+        spinnerTestParameter.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int pos, long l) {
+                    Test_Param test_param =(Test_Param) adapterView.getItemAtPosition(pos);
+                    String name =test_param.getName();
+                    setupDataInput(name);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
 
         Bundle bundle = getArguments();
         if (getArguments() != null) {
@@ -151,6 +120,33 @@ public class MainFragment2 extends Fragment {
         return view;
     }
 
+    private void setupDataInput(String test_param){
+
+            boolean  isSampleAvailable= masterDataUtil.getDataSampleFromTestParam(test_param);
+            if(isSampleAvailable){
+                        LinearLayout linearLayout =view.findViewById(R.id.linearLayoutDecisions);
+                        int id =1110;
+                        for(int i=1;i<=3;i++){
+
+                            LinearLayout row =new LinearLayout(getContext());
+                            row.setOrientation(LinearLayout.HORIZONTAL);
+                            LinearLayout.LayoutParams p = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                            row.setLayoutParams(p);
+                            row.setId(++id);
+
+                            p.setMargins(10,5,0,0);
+                            EditText editText = new EditText(getContext());
+                            editText.setLayoutParams(p);
+                            editText.setId(i+3);
+
+
+
+
+
+                        }
+            }
+
+    }
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);

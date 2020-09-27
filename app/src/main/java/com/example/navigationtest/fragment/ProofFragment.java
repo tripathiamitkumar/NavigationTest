@@ -24,8 +24,14 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.navigationtest.R;
-
-import java.util.ArrayList;
+import com.example.navigationtest.model.Location;
+import com.example.navigationtest.model.Section;
+import com.example.navigationtest.model.Store;
+import com.example.navigationtest.model.Type_Of_Proof;
+import com.example.navigationtest.util.DataMapping;
+import com.example.navigationtest.util.DataSetup;
+import com.example.navigationtest.util.MasterDataUtil;
+import java.util.List;
 
 public class ProofFragment extends Fragment implements DatePickerDialog.OnDateSetListener {
     ImageButton selectDate;
@@ -33,13 +39,19 @@ public class ProofFragment extends Fragment implements DatePickerDialog.OnDateSe
     TextView selectedDate;
     EditText editTxt_LotNumber, editTxt_ProofSlipNumber;
     Spinner spinnerLocation,spinnerSection, spinnerStore, spinnerTypeOfStore, spinnerTypeOfProof, spinnerProofNumber;
-    ArrayList<String> section;
-    ArrayList<String> arrayList_Select, arrayList_UNIT_01, arrayList_UNIT_03, arrayList_UNIT_04, arrayList_UNIT_06, arrayList_UNIT_10;
-    ArrayAdapter<String> arrayAdapter_section, arrayAdapter_store;
+    List<Section> section;
+    List<Location> locationList;
+    ArrayAdapter<Location> locationArrayAdapter;
+    ArrayAdapter<Section> arrayAdapter_section;
+    ArrayAdapter<Store> arrayAdapter_store;
+    ArrayAdapter<Type_Of_Proof> proofArrayAdapter;
+    List<Type_Of_Proof> typeOfProofList;
+    private DataSetup dataSetup;
+    private List<Store> storeList;
 
+    private MasterDataUtil masterDataUtil = null;
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     private onFragmentBtnSelected listener;
@@ -49,6 +61,8 @@ public class ProofFragment extends Fragment implements DatePickerDialog.OnDateSe
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
+        masterDataUtil =MasterDataUtil.getInstance();
+        dataSetup = new DataMapping(masterDataUtil);
         spinnerLocation = (Spinner) view.findViewById(R.id.spinnerLocation);
         spinnerSection = (Spinner) view.findViewById(R.id.spinnerSection);
         spinnerStore = (Spinner) view.findViewById(R.id.spinnerStore);
@@ -59,132 +73,31 @@ public class ProofFragment extends Fragment implements DatePickerDialog.OnDateSe
         editTxt_LotNumber = (EditText) view.findViewById(R.id.editTxt_LotNumber);
         editTxt_ProofSlipNumber = (EditText) view.findViewById(R.id.editTxt_ProofSlipNumber);
         selectedDate = (TextView) view.findViewById(R.id.selectedDate);
-
-        section = new ArrayList<>();
-        section.add("Select");
-        section.add("UNIT-01");
-        section.add("UNIT-03");
-        section.add("UNIT-04");
-        section.add("UNIT-06");
-        section.add("UNIT-10");
-
-        arrayAdapter_section = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item, section);
+        locationList =dataSetup.getAllLocation();
+        section = dataSetup.getAllSection();
+        typeOfProofList= dataSetup.getTypeOfProofList();
+        proofArrayAdapter =new ArrayAdapter<Type_Of_Proof>(getContext(), android.R.layout.simple_spinner_dropdown_item, typeOfProofList);
+        arrayAdapter_section = new ArrayAdapter<Section>(getContext(), android.R.layout.simple_spinner_dropdown_item, section);
+        locationArrayAdapter = new ArrayAdapter<Location>(getContext(),android.R.layout.simple_spinner_dropdown_item, locationList);
+        spinnerLocation.setAdapter(locationArrayAdapter);
         spinnerSection.setAdapter(arrayAdapter_section);
-
-        arrayList_Select = new ArrayList<>();
-        arrayList_Select.add("Select");
-
-        arrayList_UNIT_01 = new ArrayList<>();
-        arrayList_UNIT_01.add("Select");
-        arrayList_UNIT_01.add("Primer Electric 1A/L (Filled)");
-        arrayList_UNIT_01.add("Primer Electric 1A/L (Filled)(HEAVY PROOF)");
-        arrayList_UNIT_01.add("Primer Electric 1A/L (Empty)");
-        arrayList_UNIT_01.add("Primer Electric 1A/L (Empty)(HEAVY PROOF)");
-        arrayList_UNIT_01.add("Combination Case Ignition Primer GUV-7 (filled)");
-        arrayList_UNIT_01.add("Combination Case Ignition Primer GUV-7 (filled) Pilot Lot");
-        arrayList_UNIT_01.add("Combination Case Ignition Primer GUV-7 (Empty)");
-        arrayList_UNIT_01.add("Combination Case Ignition Primer GUV-7 (Empty) Pilot Lot");
-        arrayList_UNIT_01.add("PRIMER PERCUSSION Q.F.CARTRIDGE 18A (FILLED)");
-        arrayList_UNIT_01.add("Primer Sleeve KB-30 (Filled) ");
-        arrayList_UNIT_01.add("Cartg. Bomb 51mm (FTT) Filled");
-        arrayList_UNIT_01.add("Cartg. Bomb 51mm (FTT) Filled First Lot");
-
-
-        arrayList_UNIT_03 = new ArrayList<>();
-        arrayList_UNIT_03.add("Select");
-        arrayList_UNIT_03.add("Igniting Primer NO:.1 MG 8");
-        arrayList_UNIT_03.add("Cap 78mg QFGG");
-        arrayList_UNIT_03.add("Cap Complete for Primary Cartg. for Mortar Bomb 51mm (3G CAP)");
-        arrayList_UNIT_03.add("Cap Conducting Composition");
-        arrayList_UNIT_03.add("Primer Detonator A-30-T");
-        arrayList_UNIT_03.add("Charged Electric Fuze");
-        arrayList_UNIT_03.add("Igniting Primer KB-3B");
-        arrayList_UNIT_03.add("Igniting Primer NO: .1 Sleeve");
-        arrayList_UNIT_03.add("Detonator 135mg LZY");
-        arrayList_UNIT_03.add("Detonator 356mg LZ");
-
-
-        arrayList_UNIT_04 = new ArrayList<>();
-        arrayList_UNIT_04.add("Select");
-        arrayList_UNIT_04.add("Fuze Mine Anti-Tank 2B ND (Filled)");
-        arrayList_UNIT_04.add("Fuze Mine Anti-Tank 2B ND (Filled)(FIRST LOT)");
-        arrayList_UNIT_04.add("Fuze Mine Anti-Tank 2B ND (Empty)");
-        arrayList_UNIT_04.add("Fuze Mine Anti-Tank 2B ND (Empty)(FIRST LOT)");
-        arrayList_UNIT_04.add("Fuze Mine Anti-Tank 4A ND (Filled)");
-        arrayList_UNIT_04.add("Fuze Mine Anti-Tank 4A ND (Filled)(FIRST LOT)");
-        arrayList_UNIT_04.add("Fuze Mine Anti-Tank 4A ND (Empty)");
-        arrayList_UNIT_04.add("Fuze Mine Anti-Tank 4A ND (Empty)(FIRST LOT)");
-        arrayList_UNIT_04.add("Fuze Percussion DA No .117 MK-20(Filled)");
-        arrayList_UNIT_04.add("Fuze Percussion DA No 117 MK-20(Filled) First Lot/ Pilot Lot");
-        arrayList_UNIT_04.add("Fuze Percussion DA No 117 MK-20(Empty)");
-        arrayList_UNIT_04.add("Fuze Percussion DA No.117 MK-20(Empty)(Advance samples)");
-        arrayList_UNIT_04.add("Fuze Percussion DA No.117 MK-20(Empty) (First Lot)");
-        arrayList_UNIT_04.add("Fuze Percussion DA5A (Filled)");
-        arrayList_UNIT_04.add("Fuze Percussion DA5A (Filled)(First Lot)");
-        arrayList_UNIT_04.add("Fuze Percussion DA5A (Empty Filled)");
-        arrayList_UNIT_04.add("Fuze Percussion DA5A(Empty Filled)(First Lot)");
-        arrayList_UNIT_04.add("Fuze Percussion DA5A(Empty Filled)(Advance samples)");
-        arrayList_UNIT_04.add("Fuze A670M (Filled) sample size is 39 Nos");
-        arrayList_UNIT_04.add("Fuze A670M (Filled)Every 3rd Lot Sample size is 89 Nos");
-        arrayList_UNIT_04.add("Mortar Bomb 51mm HE2A (Filled)");
-        arrayList_UNIT_04.add("Mortar Bomb 51mm HE2A (Filled) Every 15th Lot");
-
-
-        arrayList_UNIT_06 = new ArrayList<>();
-        arrayList_UNIT_06.add("Select");
-        arrayList_UNIT_06.add("Propellant Matching Proof of Primer KB-30");
-
-
-        arrayList_UNIT_10 = new ArrayList<>();
-        arrayList_UNIT_10.add("Select");
-        arrayList_UNIT_10.add("Mine AT 4D ND (Filled)");
+        spinnerTypeOfProof.setAdapter(proofArrayAdapter);
 
 
         spinnerSection.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
+
+                Section section =(Section) spinnerSection.getItemAtPosition(position);
                 if (position == 0) {
-                    arrayAdapter_store = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item, arrayList_Select);
-                    //String text = spinnerSection.getItemAtPosition(position).toString();
                     Toast.makeText(spinnerSection.getContext(), "Please Select Section Items", Toast.LENGTH_SHORT).show();
-
+                } else {
+                    storeList = dataSetup.getStoreFromSection(section.getName());
+                    Toast.makeText(spinnerSection.getContext(), "Section "+section.getName()+" Selected", Toast.LENGTH_SHORT).show();
+                    arrayAdapter_store = new ArrayAdapter<Store>(getContext(), android.R.layout.simple_spinner_dropdown_item, storeList);
+                    spinnerStore.setAdapter(arrayAdapter_store);
                 }
-                if (position == 1) {
-                    arrayAdapter_store = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item, arrayList_UNIT_01);
-                    // String text = spinnerSection.getItemAtPosition(position).toString();
-                    //Toast.makeText(spinnerSection.getContext(), text, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(spinnerSection.getContext(), "Section UNIT-01 Selected", Toast.LENGTH_SHORT).show();
-                }
-                if (position == 2) {
-                    arrayAdapter_store = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item, arrayList_UNIT_03);
-                    //String text = spinnerSection.getItemAtPosition(position).toString();
-                    //Toast.makeText(spinnerSection.getContext(), text, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(spinnerSection.getContext(), "Section UNIT-03 Selected", Toast.LENGTH_SHORT).show();
-                }
-                if (position == 3) {
-                    arrayAdapter_store = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item, arrayList_UNIT_04);
-                    //String text = spinnerSection.getItemAtPosition(position).toString();
-                    //Toast.makeText(spinnerSection.getContext(), text, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(spinnerSection.getContext(), "Section UNIT-04 Selected", Toast.LENGTH_SHORT).show();
-                }
-                if (position == 4) {
-                    arrayAdapter_store = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item, arrayList_UNIT_06);
-                    //String text = spinnerSection.getItemAtPosition(position).toString();
-                    //Toast.makeText(spinnerSection.getContext(), text, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(spinnerSection.getContext(), "Section UNIT-06 Selected", Toast.LENGTH_SHORT).show();
-                }
-                if (position == 5) {
-                    arrayAdapter_store = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item, arrayList_UNIT_10);
-                    // String text = spinnerSection.getItemAtPosition(position).toString();
-                    // Toast.makeText(spinnerSection.getContext(), text, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(spinnerSection.getContext(), "Section UNIT-10 Selected", Toast.LENGTH_SHORT).show();
-                }
-                spinnerStore.setAdapter(arrayAdapter_store);
-
-
             }
-
-
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
 
@@ -282,8 +195,6 @@ public class ProofFragment extends Fragment implements DatePickerDialog.OnDateSe
     public interface
     onMainFragment2BtnSelected {
         public void onButtonSeleted1();
-
-
     }
 
 
