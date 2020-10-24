@@ -1,5 +1,7 @@
 package com.example.navigationtest.model;
 
+import java.util.Objects;
+
 public class Proof_Number {
     private int id;
     private String name;
@@ -28,5 +30,18 @@ public class Proof_Number {
     @Override
     public String toString() {
         return name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Proof_Number that = (Proof_Number) o;
+        return Objects.equals(name, that.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
     }
 }

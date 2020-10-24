@@ -4,6 +4,8 @@ public class Test_Param {
 
     private int id;
     private String name;
+    private String testType;
+    private String sampleSize;
 
     public int getId() {
         return id;
@@ -29,5 +31,21 @@ public class Test_Param {
     @Override
     public String toString() {
         return name;
+    }
+
+    public String getTestType() {
+        return testType;
+    }
+
+    public void setTestType(String testType) {
+        this.testType = testType;
+    }
+
+    public String getSampleSize() {
+        return sampleSize;
+    }
+
+    public void setSampleSize(String sampleSize) {
+        this.sampleSize = sampleSize;
     }
 }

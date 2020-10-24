@@ -1,5 +1,7 @@
 package com.example.navigationtest.model;
 
+import java.util.Objects;
+
 public class Type_Of_Proof {
 
     private int id;
@@ -29,5 +31,18 @@ public class Type_Of_Proof {
     @Override
     public String toString() {
         return name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Type_Of_Proof that = (Type_Of_Proof) o;
+        return Objects.equals(name, that.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
     }
 }

@@ -539,7 +539,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linear22">
 
-        <TextView
+        <Spinner
             android:id="@+id/spinnerTestParameter"
             android:layout_width="0dp"
             android:layout_height="40dp"
@@ -549,9 +549,11 @@
             android:background="@drawable/round_shape_button"
             android:text="test parameter"
             android:textColor="#000000"
-            android:textSize="28sp" />
+            android:textSize="40sp" />
 
     </LinearLayout>
+
+
 
     <LinearLayout
         android:id="@+id/linear24"
@@ -562,11 +564,19 @@
         android:layout_marginStart="5dp"
 
         android:layout_marginEnd="5dp"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/linear23"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linear23">
+        
+        <LinearLayout
+            android:id="@+id/linearLayoutDecisions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+        </LinearLayout>
 
         <Button
             android:id="@+id/btn_f2m_add"
@@ -580,7 +590,9 @@
             android:textColor="@color/colorPrimaryDark"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+
+            />
 
     </LinearLayout>
 

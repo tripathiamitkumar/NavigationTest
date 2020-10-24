@@ -1,5 +1,7 @@
 package com.example.navigationtest.model;
 
+import java.util.Objects;
+
 public class Section {
 
     private int id;
@@ -29,5 +31,18 @@ public class Section {
     @Override
     public String toString() {
         return name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Section section = (Section) o;
+        return Objects.equals(name, section.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
     }
 }
