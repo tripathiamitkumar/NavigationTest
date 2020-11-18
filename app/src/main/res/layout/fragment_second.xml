@@ -36,7 +36,7 @@
 
         <TextView
             android:id="@+id/textView46"
-            android:layout_width="wrap_content"
+            android:layout_width="146dp"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_gravity="center_horizontal"
@@ -82,29 +82,10 @@
             android:layout_width="180dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="5dp"
-
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-
-            android:background="@drawable/round_shape_button"
             android:textColor="#000000"
             android:textSize="28sp" />
-        <Button
-            android:id="@+id/btn_f2_search1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginRight="1dp"
-            android:background="@drawable/round_shape_search_button"
-            android:gravity="center"
-            android:text="Search"
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
     </LinearLayout>
 
     <LinearLayout
@@ -139,46 +120,200 @@
             android:layout_width="180dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="5dp"
-
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-
-            android:background="@drawable/round_shape_button"
             android:textColor="#000000"
             android:textSize="28sp" />
-        <Button
-            android:id="@+id/btn_f2_search2"
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear36"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear34"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="5dp"
+        android:background="#E6FD95"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/linear35"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear35">
+        <TextView
+            android:id="@+id/textView51"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            android:layout_marginRight="1dp"
-            android:background="@drawable/round_shape_search_button"
-            android:gravity="center"
-            android:text="Search"
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:text="Date of Test            :"
+            android:textColor="#000000"
+            android:textSize="28sp" />
+        <TextView
+            android:id="@+id/textView52"
+            android:layout_width="180dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="#000000"
+            android:textSize="28sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear37"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear34"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="5dp"
+        android:background="#E6FD95"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/linear36"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear36">
+        <TextView
+            android:id="@+id/textView53"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="Test Type                :"
+            android:textColor="#000000"
+            android:textSize="28sp" />
+        <TextView
+            android:id="@+id/textView54"
+            android:layout_width="180dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="#000000"
+            android:textSize="28sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear38"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear34"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="5dp"
+        android:background="#E6FD95"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/linear37"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear37">
+        <TextView
+            android:id="@+id/textView55"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="Test Param             :"
+            android:textColor="#000000"
+            android:textSize="28sp" />
+        <TextView
+            android:id="@+id/textView56"
+            android:layout_width="180dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="#000000"
+            android:textSize="28sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear39"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear34"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="5dp"
+        android:background="#E6FD95"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/linear38"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear38">
+        <TextView
+            android:id="@+id/textView57"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="Observation           :"
+            android:textColor="#000000"
+            android:textSize="28sp" />
+        <TextView
+            android:id="@+id/textView58"
+            android:layout_width="180dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="#000000"
+            android:textSize="28sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear40"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear34"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="5dp"
+        android:background="#E6FD95"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/linear39"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear39">
+        <TextView
+            android:id="@+id/textView59"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="Result                      :"
+            android:textColor="#000000"
+            android:textSize="28sp" />
+        <TextView
+            android:id="@+id/textView60"
+            android:layout_width="180dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="#000000"
+            android:textSize="28sp" />
     </LinearLayout>
 
     <Button
         android:id="@+id/loadThird"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_marginTop="424dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/round_shape_black_button"
         android:gravity="center"
-
         android:text="Report"
         android:textColor="@color/colorPrimaryDark"
-
         android:textSize="24sp"
-
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.568"
+        app:layout_constraintStart_toEndOf="@+id/linear40"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/linear40"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

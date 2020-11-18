@@ -7,6 +7,10 @@ public class Sample implements Serializable {
        private int id;
        private int sampleSize;
        private String sectionId;
+       private String date;
+       private String item_cd;
+       private String result;
+       private String observation;
        private String storeId;
        private String proofNoId;
        private String typeOfProofId;
@@ -28,6 +32,15 @@ public class Sample implements Serializable {
        private float gtInvestigation;
        private float eqInvestigation;
        private float lsInvestigation;
+       private String flag= "0";
+
+    public String getFlag() {
+        return flag;
+    }
+
+    public void setFlag(String flag) {
+        this.flag = flag;
+    }
 
     public int getId() {
         return id;
@@ -219,5 +232,37 @@ public class Sample implements Serializable {
 
     public void setLsInvestigation(float lsInvestigation) {
         this.lsInvestigation = lsInvestigation;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getResult() {
+        return result;
+    }
+
+    public void setResult(String result) {
+        this.result = result;
+    }
+
+    public String getObservation() {
+        return observation;
+    }
+
+    public void setObservation(String observation) {
+        this.observation = observation;
+    }
+
+    public String getItem_cd() {
+        return item_cd;
+    }
+
+    public void setItem_cd(String item_cd) {
+        this.item_cd = item_cd;
     }
 }

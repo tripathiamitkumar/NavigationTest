@@ -6,7 +6,8 @@ public class Test_Param {
     private String name;
     private String testType;
     private String sampleSize;
-
+    private double upperLimit;
+    private double lowerLimit;
     public int getId() {
         return id;
     }
@@ -47,5 +48,21 @@ public class Test_Param {
 
     public void setSampleSize(String sampleSize) {
         this.sampleSize = sampleSize;
+    }
+
+    public double getUpperLimit() {
+        return upperLimit;
+    }
+
+    public void setUpperLimit(double upperLimit) {
+        this.upperLimit = upperLimit;
+    }
+
+    public double getLowerLimit() {
+        return lowerLimit;
+    }
+
+    public void setLowerLimit(double lowerLimit) {
+        this.lowerLimit = lowerLimit;
     }
 }

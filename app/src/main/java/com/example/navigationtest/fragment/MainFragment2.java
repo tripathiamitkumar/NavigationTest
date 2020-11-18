@@ -142,8 +142,6 @@ public class MainFragment2 extends Fragment {
              boolean  isSampleAvailable= sample.isDataEntry();
              LinearLayout linearLayout =view.findViewById(R.id.linearLayoutDecisions);
             if(isSampleAvailable){
-
-
                 int sampleSize = sample.getSampleSize();
                         LinearLayout.LayoutParams p = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
                         int id =1110;

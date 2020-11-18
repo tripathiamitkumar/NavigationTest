@@ -46,9 +46,37 @@ public class Login extends AppCompatActivity {
         BtnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              login();
+              //login();
+                if(isValid()){
+                    testLogin();
+                }
             }
         });
+    }
+
+
+    private boolean isValid(){
+        if(editTextUsername.getText().length()<1){
+             editTextUsername.requestFocus();
+             editTextUsername.setError("Username Required!");
+             return false;
+        }else if(editTextPassword.getText().length()<1){
+            editTextPassword.requestFocus();
+            editTextPassword.setError("Password Required!");
+            return false;
+        }
+        return true;
+    }
+
+    private void testLogin(){
+        final String username = editTextUsername.getText().toString().trim();
+        final String password = editTextPassword.getText().toString().trim();
+        if (username.equals("admin") && password.equals("admin123")) {
+            loginPreference.putLoginPref(username);
+            Intent intent = new Intent(Login.this, MainActivity.class);
+            startActivity(intent);
+        }
+
     }
 
     private void login() {
